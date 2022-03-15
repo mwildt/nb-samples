@@ -16,11 +16,11 @@ jobs:
     - name: Build Application
       uses: actions/setup-go@v2
       with:
-        go-version: '1.18'
-      run: go build -a -installsuffix cgo -o main .
+        go-version: "1.16"
       env:
-        CGO_ENABLE: 0
-        GOOS: linux
+        CGO_ENABLE: "0"
+        GOOS: "linux"
+      run: "go build -a -installsuffix cgo -o main ."
 
     - name: Log in to Docker Hub
       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
