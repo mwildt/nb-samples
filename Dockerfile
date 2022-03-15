@@ -1,8 +1,9 @@
-FROM python:latest
+FROM scratch
 
 MAINTAINER mail@maltewildt.de
 
-COPY index.html /
+COPY main /main
+COPY static /static
 
-EXPOSE 7000
-CMD python -m http.server 7000
+EXPOSE 3000
+CMD ["/main"]
