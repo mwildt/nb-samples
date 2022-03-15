@@ -5,5 +5,5 @@ MAINTAINER mail@maltewildt.de
 COPY main /main
 COPY static /static
 
-EXPOSE 3000
+EXPOSE 80
 CMD ["/main"]
