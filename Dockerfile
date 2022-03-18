@@ -1,8 +1,5 @@
-FROM ubuntu:latest
+FROM mongo:latest
 
 MAINTAINER mail@maltewildt.de
 
-COPY main /main
-COPY static /static
-
-CMD ["/main"]
+CMD ["mongod --smallfiles  --optlogsize 128"]
