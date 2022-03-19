@@ -1,0 +1,16 @@
+http:
+
+  routers:
+    default-router:
+      entrypoints:
+      - web
+      service: default-service
+      rule: Host(`{{ env "ADVERTISED_HOSTNAME" }}`)
+      tls:
+        certresolver: acmetls
+
+  services:
+    default-service:
+      loadbalancer:
+        servers:
+        - url: {{ env "SERVICE_URL" }}
