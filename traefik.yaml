@@ -15,7 +15,7 @@ entryPoints:
 
 providers:
   file:
-    file: /etc/traefik/file-provider.yaml
+    filename: /etc/traefik/file-provider.yaml
 
 certificatesResolvers:
   acmetls:
