@@ -13,17 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.17
-
-    - name: Build Application
-      run: "go build -v -a -installsuffix cgo -o main ."
-      env:
-        CGO_ENABLE: "0"
-        GOOS: "linux"
-
     - name: Log in to Docker Hub
       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
       with:
