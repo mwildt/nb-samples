@@ -9,4 +9,4 @@ branch=$(git rev-parse --abbrev-ref HEAD)
 echo $branch
 
 docker build -t $branch .
-docker run $branch
+docker run -d $branch
