@@ -1,8 +1,12 @@
-FROM ubuntu:latest
+FROM certbot/certbot
 
 MAINTAINER mail@maltewildt.de
 
+COPY start.sh /start.sh
 COPY main /main
 COPY static /static
 
-CMD ["/main"]
+RUN mkdir -p /www/.well-known/
+
+ENTRYPOINT ["/start.sh"]
+CMD []
