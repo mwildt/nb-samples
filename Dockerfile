@@ -2,13 +2,14 @@ FROM certbot/certbot
 
 MAINTAINER mail@maltewildt.de
 
-WORKDIR /
+RUN mkdir -p /opt/mwcertbot
+WORKDIR /opt/mwcertbot
 
-COPY start.sh /start.sh
-COPY main /main
-COPY static /static
+COPY start.sh /opt/mwcertbot/start.sh
+COPY main /opt/mwcertbot/main
 
-RUN mkdir -p /www/.well-known/
+RUN mkdir -p /opt/mwcertbot/.well-known/
 
-ENTRYPOINT [ "/bin/sh", "-l", "-c" ]
-CMD ["/main"]
+ENTRYPOINT [ "/opt/mwcertbot/main" ]
+
+CMD []

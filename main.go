@@ -18,7 +18,7 @@ func serveHttp() {
 		serviceHost = ":80"
 	}
 
-	fs := http.FileServer(http.Dir("/www/.well-known/"))
+	fs := http.FileServer(http.Dir("/opt/mwcertbot/.well-known/"))
 	http.Handle("/.well-known/", fs)
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
