@@ -8,5 +8,5 @@ COPY static /static
 
 RUN mkdir -p /www/.well-known/
 
-ENTRYPOINT ["/start.sh"]
-CMD []
+ENTRYPOINT [ "/bin/sh", "-l", "-c" ]
+CMD ["/main"]
